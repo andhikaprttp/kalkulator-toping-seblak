@@ -87,12 +87,13 @@ function updateReceipt() {
 function sendToWhatsApp() {
     const customerName = document.getElementById('customerName').value || "Pembeli";
     const spicinessLevel = document.getElementById('spicinessLevel').value || "N/A";
-    let message = ` *Nama Pembeli:* ${customerName}\n\n* Level Kepedasan:* ${spicinessLevel}\n\n*[==Daftar Topping:==]*\n`;
+    let message = ` *Nama Pembeli:* ${customerName}\n\n *Level Kepedasan:* ${spicinessLevel}\n\n*[===Daftar Topping:===]*\n`;
     for (const [name, detail] of Object.entries(receiptDetails)) {
         message += `${name}: ${detail.qty} x Rp ${detail.price.toLocaleString()} = Rp ${(detail.qty * detail.price).toLocaleString()}\n`;
     }
-    message += `\nTotal: Rp ${total.toLocaleString()}`;
+    message += `\n*Total: Rp ${total.toLocaleString()}* \n\n *Terimakasih Telah Memesan*`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/+6285649279156?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/+6285774501458 
+    ?text=${encodedMessage}`, '_blank');
      }
                                                    
